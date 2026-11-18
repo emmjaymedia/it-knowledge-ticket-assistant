@@ -1,0 +1,27 @@
+{
+  "keyword": {
+    "passed": 11,
+    "total": 13,
+    "median_ms": 0.042,
+    "p95_ms": 0.202,
+    "failures": [
+      {
+        "question": "VPN repeatedly asks me to sign in",
+        "expected": "vpn-2",
+        "actual": "vpn-1"
+      },
+      {
+        "question": "Where do I request installation and provide a device asset tag for licensing?",
+        "expected": "software-1",
+        "actual": "mfa-1"
+      }
+    ]
+  },
+  "vector": {
+    "passed": 13,
+    "total": 13,
+    "median_ms": 1.611,
+    "p95_ms": 2.274,
+    "failures": []
+  }
+}

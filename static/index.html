@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ServiceDesk Knowledge</title>
+  <link rel="stylesheet" href="/static/workspace.css">
+  <script src="/static/workspace.js" defer></script>
+</head>
+<body>
+  <header><div class="brand"><span class="mark" aria-hidden="true">↳</span> ServiceDesk<span class="divider">/</span> Knowledge</div><a href="/docs">API docs ↗</a></header>
+  <main>
+    <section class="intro">
+      <h1>How can IT help?</h1>
+      <p>Search the IT knowledge base or send an issue to the service desk.</p>
+    </section>
+    <div class="workspace">
+      <section class="panel">
+        <form id="ask">
+          <label for="question">Your question</label>
+          <textarea id="question" minlength="8" maxlength="1200" required placeholder="My laptop won’t power on. What should I check?"></textarea>
+          <div class="actions"><button type="submit" id="search-button">Search knowledge base <span aria-hidden="true">→</span></button></div>
+        </form>
+        <p id="status" role="status"></p>
+        <article id="result" hidden>
+          <div class="result-head"><h2 id="result-title"></h2><span id="elapsed"></span></div>
+          <p id="answer"></p>
+          <p id="citation" class="citation" hidden></p>
+          <button type="button" id="open-ticket" class="secondary">Review ticket draft →</button>
+        </article>
+        <form id="ticket" hidden>
+          <h2>New support ticket</h2>
+          <label for="title">Title</label><input id="title" required minlength="3" maxlength="100">
+          <label for="description">Description</label><textarea id="description" required minlength="8" maxlength="1200"></textarea>
+          <label for="queue">Queue</label><select id="queue"><option>Access &amp; identity</option><option>Software</option><option>Equipment</option><option>IT support</option></select>
+          <div class="actions"><button type="submit" id="submit-ticket">Submit ticket</button></div>
+          <p id="ticket-status" role="status"></p>
+        </form>
+      </section>
+      <aside>
+        <h2>Try an example</h2>
+        <button type="button" data-example="What should I do when the VPN times out?">VPN connection timeout <span>↗</span></button>
+        <button type="button" data-example="Can IT repair a coffee machine?">Issue without guidance <span>↗</span></button>
+        <button type="button" data-example="What is the break-glass recovery drill exercise reference?">Restricted recovery guide <span>↗</span></button>
+        <p>This workspace uses synthetic IT policies and example tickets.</p>
+      </aside>
+    </div>
+  </main>
+</body>
+</html>
